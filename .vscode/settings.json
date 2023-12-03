@@ -1,14 +1,17 @@
 {
-	"sqltools.connections": [
-		{
-			"previewLimit": 50,
-			"server": "localhost",
-			"port": 5432,
-			"driver": "PostgreSQL",
-			"database": "prismabench",
-			"username": "amir",
-			"password": "1234",
-			"name": "prisma-bench"
-		}
-	]
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "database": "prismabench",
+      "username": "amir",
+      "password": "1234",
+      "name": "prisma-bench"
+    }
+  ],
+  "deno.enablePaths": ["apps/bc/lesan"],
+  "deno.unstable": true,
+  "deno.importMap": "./import_map.json"
 }
