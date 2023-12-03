@@ -21,9 +21,15 @@ export const getCountriesByGraphMethods = async (
   const query = gql`
     {
       getFiftyCitiesOfCountry(pageNumber: ${page}, limit: ${limit}) {
+        id
         name
+        abb
+        population
         provinces {
+          id
           name
+          abb
+          population
           cities {
             id
             name
@@ -36,8 +42,8 @@ export const getCountriesByGraphMethods = async (
   `;
   try {
     console.log(query);
-    const res: any = await request('http://localhost:3051/graphql', query);
-    console.log(res);
+    const res: any = await request('http://localhost:3050/graphql', query);
+    console.log({res});
 
     str &&
       str.setState((states) => ({
