@@ -46,7 +46,7 @@ export const typeDefs = `
     type Query{
         getOneCountry(
             id:Int
-        ):[Country]
+        ):Country
     }
 `
 
@@ -57,12 +57,14 @@ export const resolvers = {
             await seedPrisma()
             return "seeded successfully!"
         },
+
         getFiftyCitiesOfCountry: async(
             _: unknown,
             args: {limit:number,pageNumber:number},
         ) => {
             return await getFiftyCitiesOfCountryService(args.limit,args.pageNumber)
         },
+        
         getOneCountry: async (
             _: unknown,
             args: {id:number},

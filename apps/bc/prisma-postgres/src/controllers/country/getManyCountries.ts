@@ -3,7 +3,7 @@ import getManyCountriesService from '../../services/country/getManyCountries.ser
 
 const getManyCountry = async (req: Request, res: Response) => {
 	try {
-		const limit = Number(req.params.id)
+		const limit = Number(req.params.limit)
 		const countries = await getManyCountriesService(limit)
 		
 		if (countries) {

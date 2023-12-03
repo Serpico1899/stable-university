@@ -5,7 +5,6 @@ import getOneCity from "../controllers/city/getOneCity"
 import createCountry from "../controllers/country/createCountry"
 import getFiftyCitiesOfCountry from "../controllers/country/getFiftyCitiesOfCountry"
 import getManyCountry from "../controllers/country/getManyCountries"
-import getOneCountry from "../controllers/country/getOneCountry"
 import createProvince from "../controllers/province/createProvince"
 import getManyProvinces from "../controllers/province/getManyProvinces"
 import getOneProvince from "../controllers/province/getOneProvince"
@@ -19,8 +18,8 @@ const router = Router()
 router.post( "/countries/create", createCountry )
 router.get( "/countries/fiftyCitiesOfFiftyProvinces", getFiftyCitiesOfCountry )
 router.get( "/countries/:countryId/provinces", getManyProvinces )
-router.get( "/countries/:id", getOneCountry )
-router.get( "/countries", getManyCountry )
+// router.get( "/countries/:id", getOneCountry )
+router.get( "/countries/:limit", getManyCountry )
 
 router.post( "/provinces/create", createProvince )
 router.get( "/provinces/:provinceId/cities", getManyCities )
