@@ -7,33 +7,18 @@ import {
 } from 'fr/fr-states';
 import styled from 'styled-components';
 
-export const TestRest = () => {
+export const TestGraph = () => {
   const countries = useStore((state) => state.countries);
 
-  useEffect(() => {
-    getCountries();
-  }, []);
+  // useEffect(() => {
+  //   getCountriesByGraphMethods();
+  // }, []);
 
   return (
     <TemplateLayout>
-      {/* 
-      {countries.data.map((country) => (
-        <>
-          <h1>{country.name} </h1>
-          {country.provinces &&
-            country.provinces.map((province) => (
-              <>
-                <h3>{province.name} </h3>
-                {province.cities &&
-                  province.cities.map((city) => <h6>{city.name} </h6>)}
-              </>
-            ))}
-        </>
-      ))} */}
-
       <Wrapper>
         {countries.data.map((country, indx) => (
-          <div className="country">
+          <div className="country" key={indx}>
             <div className="country--title title">
               <h2>نام کشور: {country.name}</h2>
               <p className="abb">مخفف: {country.abb}</p>
@@ -41,7 +26,7 @@ export const TestRest = () => {
             </div>
             <div className="detail">
               {country.provinces?.map((province, index) => (
-                <div className="province">
+                <div className="province" key={index}>
                   <div className="province--title title">
                     <h3>نام‌استان‌:{province.name}</h3>
                     <p className="abb">مخفف‌:{province.abb}</p>
@@ -49,7 +34,7 @@ export const TestRest = () => {
                   </div>
                   <div className="cities">
                     {province?.cities?.map((province, index) => (
-                      <div className="city">
+                      <div className="city" key={index}>
                         <h3>نام شهرستان:{province.name}</h3>
                         <p className="abb">مخفف‌:{province.abb}</p>
                         <p className="population">
