@@ -1,4 +1,4 @@
-# run me in root of ./apps/prisma-graphql/src:
+# run me in root of ./apps/bc/prisma-graphql/src:
 # hurl --variables-file .env http/getOneCountry.hurl --test
 
 POST http://localhost:{{SERVER_PORT}}/graphql

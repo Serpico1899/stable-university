@@ -1,10 +1,11 @@
-import { Request, Response } from 'express'
-import getManyCountriesService from '../../services/country/getManyCountries.service'
+import { Request, Response } from 'express';
+import getManyCountriesService from '../../services/country/getManyCountries.service';
 
 const getManyCountry = async (req: Request, res: Response) => {
 	try {
-		const limit = Number(req.params.id)
-		const countries = await getManyCountriesService(limit)
+		const limit = Number(req.query.limit)
+		const page = Number(req.query.page)
+		const countries = await getManyCountriesService(limit, page)
 		
 		if (countries) {
             res.status(200).send(countries);

@@ -20,7 +20,7 @@ router.post( "/countries/create", createCountry )
 router.get( "/countries/fiftyCitiesOfFiftyProvinces", getFiftyCitiesOfCountry )
 router.get( "/countries/:countryId/provinces", getManyProvinces )
 router.get( "/countries/:id", getOneCountry )
-router.get( "/countries", getManyCountry )
+router.get( "/countries?", getManyCountry )
 
 router.post( "/provinces/create", createProvince )
 router.get( "/provinces/:provinceId/cities", getManyCities )
